@@ -2,13 +2,14 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
+
 	private int vidaPlayer;
 	private int powerPlayer;
 	private int levelPlayer;
 
 
 	private int dano_sem_arma;
-	private int dano_especial_arma;
+	private int dano_especial;
 	private int dano_arma;
 	private int dano_total;
 
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
+
+
 }
