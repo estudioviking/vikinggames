@@ -53,6 +53,10 @@ public class Inimigo : MonoBehaviour {
 		player.PlayerPerderVida (dano);
 	}
 
+	public void InimigoReceberDano (int perder){
+		vidaInimigo -= perder;
+	}
+
 
 
 }
