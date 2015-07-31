@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-	private int vidaPlayer;
+	public int vidaPlayer;
 	private int powerPlayer;
 	private int levelPlayer;
 
@@ -16,12 +16,18 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		vidaPlayer = 10;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+	}
+
+	public void PlayerPerderVida(int perder){
+		Debug.Log (vidaPlayer);
+		vidaPlayer -= perder;
+
 	}
 
 
