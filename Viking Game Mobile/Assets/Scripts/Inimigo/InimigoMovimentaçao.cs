@@ -1,23 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Inimigo2 : MonoBehaviour {
+public class InimigoMovimentaçao : MonoBehaviour {
 
-	private float posicaoX;
-	private float posicaoY;
-	
-	private int vidaInimigo;
-	private int dano;
-	
+
 	public float speed;
-	
+	public float limitx;
+
+
+
+
 	// Use this for initialization
 	void Start () {
-		speed = 2f;
+		limitx = -8f;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
+
+		 
 		this.transform.Translate(Vector3.left*speed*Time.deltaTime);
+	
+
+		if (this.transform.position.x <= limitx) {
+			speed = 0f;
+
+		}
+			
 	}
+
+
+
+
 }

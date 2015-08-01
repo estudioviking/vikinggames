@@ -14,6 +14,8 @@ public class Player : MonoBehaviour {
 	private int dano_total;
 
 
+	//causar dano nos inimigos
+
 	// Use this for initialization
 	void Start () {
 		vidaPlayer = 10;
