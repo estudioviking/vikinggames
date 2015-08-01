@@ -10,7 +10,10 @@ public class InimigoVida : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (vidaInimigo == 0) {
+			Destroy(this);
+		}
+	
 	}
 	public void InimigoReceberDano (int perder){
 		vidaInimigo -= perder;

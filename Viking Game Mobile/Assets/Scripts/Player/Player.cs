@@ -23,8 +23,10 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+			
 	}
+
+	RaycastHit
 
 	public void PlayerPerderVida(int perder){
 		Debug.Log (vidaPlayer);
