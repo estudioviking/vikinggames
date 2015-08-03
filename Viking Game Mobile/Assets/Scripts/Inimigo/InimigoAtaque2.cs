@@ -3,32 +3,28 @@ using System.Collections;
 
 public class InimigoAtaque2 : MonoBehaviour {
 
-
-	public int dano;
-
-	GameObject flechas;
-
+	public GameObject flechas;
+	InimigoMovimentaçao2 inimigo2;
 	
 	float temporizador;
 	public float tempoEntreAtaques;
 	
 	void Awake (){
 		//Definindo que apenas o player e utilizado, nao e necessario mas e o correto.
+		tempoEntreAtaques = 5.0f;
+		temporizador = 0;
+		inimigo2 = GetComponent<InimigoMovimentaçao2>();
+
 	}
 	
-	// Use this for initialization
-	void Start () {
-		tempoEntreAtaques = 2f;
-		temporizador = 0;
-		dano = 1;
-	}
+
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		temporizador += Time.deltaTime;
 
 	
-		if (this.transform.position.x <= Random.Range(-1f,9)) {
+		if (inimigo2.speed == 0){
 			if (temporizador >= tempoEntreAtaques ){
 				AtirarFlechas();
 				temporizador = 0f;
@@ -37,7 +33,7 @@ public class InimigoAtaque2 : MonoBehaviour {
 		
 	}
 	void AtirarFlechas(){
-		//Criar flechas
+		Instantiate (flechas,this.transform.position,Quaternion.identity);
 	}
 	
 
