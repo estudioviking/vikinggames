@@ -13,7 +13,7 @@ public class PlayerAtaque : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		dano_total = 11;
+		dano_total = 5;
 		powerPlayer = 10;
 		sliderPower.maxValue = powerPlayer;
 	}
@@ -23,7 +23,7 @@ public class PlayerAtaque : MonoBehaviour {
 
 	}
 	void OnTriggerStay2D(Collider2D col) {
-		if(col.gameObject.tag == "Inimigo1"){
+
 			if (Input.GetMouseButtonDown(0))
 			{
 				//Get the mouse position on the screen and send a raycast into the game world from that position.
@@ -31,11 +31,14 @@ public class PlayerAtaque : MonoBehaviour {
 				RaycastHit2D hit = Physics2D.Raycast(worldPoint,Vector2.zero);
 				
 				if ( hit.collider != null )
-				{
+			{
+				if(col.gameObject.tag == "Inimigo1"){
 					InimigoVida matarInimigo = hit.collider.gameObject.GetComponent<InimigoVida>();
 					matarInimigo.InimigoReceberDano(dano_total);
 				}
+
 			}
-		}
+			}
+		
 	}
 }

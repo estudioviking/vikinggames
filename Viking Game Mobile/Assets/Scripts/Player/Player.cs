@@ -6,10 +6,7 @@ public class Player : MonoBehaviour {
 
 	public int vidaPlayer;
 	private int levelPlayer;
-
-
-
-
+	
 	public Slider sliderVida;
 
 
