@@ -11,12 +11,14 @@ public class InimigoVida : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (vidaInimigo == 0) {
-			Destroy(this);
+		if (vidaInimigo <= 0) {
+
+			Destroy(this.gameObject);
 		}
 	
 	}
 	public void InimigoReceberDano (int perder){
+		Debug.Log (vidaInimigo);
 		vidaInimigo -= perder;
 	}
 
