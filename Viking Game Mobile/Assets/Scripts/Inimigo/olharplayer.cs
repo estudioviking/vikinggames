@@ -1,20 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class olharplayer : MonoBehaviour {
-	GameObject player;
+public class OlharPlayer : MonoBehaviour {
 
 	Vector3 posicaoPlayer;
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindWithTag("Player");
-
-		posicaoPlayer = new Vector3 (player.transform.position.x, 1, 1);
-		transform.LookAt (posicaoPlayer);
+		olharPlayer ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
+	void olharPlayer(){
+				
+		posicaoPlayer = new Vector3 (GameObject.FindWithTag("Player").transform.position.x, 1, 1);
+		transform.LookAt (posicaoPlayer);
+	}
+	
 }

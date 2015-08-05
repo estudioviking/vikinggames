@@ -5,7 +5,7 @@ public class GameControler : MonoBehaviour {
 
 	//public TextMesh moedas;
 
-	private int moeda, moedasColetadas, valorMoeda;
+	private int moeda, moedasColetadas, valorMoeda, valorPower;
 	private int level;
 	// Use this for initialization
 	void Start () {
@@ -23,15 +23,13 @@ public class GameControler : MonoBehaviour {
 			if ( hit.collider != null )
 			{
 				if (hit.collider.gameObject.tag == "Moeda"){
-					Moeda pegarValor = hit.collider.gameObject.GetComponent<Moeda>();
-					valorMoeda = pegarValor.ValorMoeda();
+					Moeda pegarValorMoeda = hit.collider.gameObject.GetComponent<Moeda>();
+					valorMoeda = pegarValorMoeda.ValorMoeda();
 					hit.collider.gameObject.SendMessage("MoverMoeda");
 
 					PlayerPegarMoedas(valorMoeda);
 
 				}
-					
-				
 			}
 		}
 	}
