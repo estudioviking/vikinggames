@@ -12,7 +12,7 @@ public class InimigoMovimentaçao : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		limitx = -8f;
+		limitx = 3.5f;
 	}
 	
 	// Update is called once per frame

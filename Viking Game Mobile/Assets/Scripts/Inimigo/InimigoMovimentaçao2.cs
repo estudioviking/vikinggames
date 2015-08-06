@@ -21,7 +21,7 @@ public class InimigoMovimentaçao2 : MonoBehaviour {
 		this.transform.Translate(Vector3.left*speed*Time.deltaTime);
 	
 
-		if (this.transform.position.x <= Random.Range(-1f,10f) ) {
+		if (this.transform.position.x <= Random.Range(7f,22f) ) {
 			speed = 0f;
 
 		}

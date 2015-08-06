@@ -9,30 +9,63 @@ public class ManagerInimigos : MonoBehaviour {
 	public GameObject guerreiro;
 	public GameObject arqueiro;
 
+	private float tempoLevel;
+	private float tempoLevelVariavel;
+
+	private int invocar;
+
 	// Use this for initialization
 	void Start () {
 
 		Invoke ("Guerreiro", 2f);
-		Invoke ("Arqueiro", 2f);
+
+
+		tempoLevel = Time.time;
+		tempoLevelVariavel = 10f;
+
 
 	}
 	
 	// Update is called once per frame	
 	void Update () {
+		invocar = Random.Range (1, 100);
+
+		if (invocar > 25) {
+			if (Time.time >= tempoLevel + tempoLevelVariavel) {
+				Invoke ("Guerreiro", 1f);
+				tempoLevel = Time.time;
+				tempoLevelVariavel -= 0.5f;
+
+			}
+			if (tempoLevelVariavel <= 1) {
+				tempoLevelVariavel = 2f;
+			}
+		}
+
+		if(invocar <= 30)
+			if (Time.time >= tempoLevel + tempoLevelVariavel) {
+				Invoke ("Arqueiro", 1f);
+				tempoLevel = Time.time;
+				tempoLevelVariavel -= 0.5f;
+				
+			}
+			if (tempoLevelVariavel <= 1) {
+				tempoLevelVariavel = 2f;
+			}
 
 	}
 	void Guerreiro(){
 
-		posicaoInicialY = Random.Range (-6.0f,6.0f);
+		posicaoInicialY = Random.Range (-5.5f,5.5f);
 		Instantiate (guerreiro,new Vector3(this.transform.position.x,posicaoInicialY,this.transform.position.z),Quaternion.identity);
-		Invoke ("Guerreiro", Random.Range(2f,5f));
+
 	
 	}
 	void Arqueiro(){
 		
-		posicaoInicialY = Random.Range (-6.0f,6.0f);
+		posicaoInicialY = Random.Range (-5.5f,5.5f);
 		Instantiate (arqueiro,new Vector3(this.transform.position.x,posicaoInicialY,this.transform.position.z),Quaternion.identity);
-		Invoke ("Arqueiro", Random.Range(3f,8f));
+
 		
 	}
 

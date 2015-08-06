@@ -23,23 +23,24 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetMouseButtonDown(0))
-		{
+			{
 			Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast(worldPoint,Vector2.zero);
 			
 			if ( hit.collider != null )
-			{
-				if (hit.collider.gameObject.tag == "Power"){
-
+				{
+				if (hit.collider.gameObject.tag == "Power")
+					{
 					Power pegarValorPower = hit.collider.gameObject.GetComponent<Power>();
 					power = pegarValorPower.ValorPower();
 					hit.collider.gameObject.SendMessage("MoverPower");
 					
 					PlayerPegarPower(power);
 
+					}
 				}
 			}
-		}
+
 	}
 	
 
