@@ -5,8 +5,7 @@ public class InimigoAtaque : MonoBehaviour {
 
 	public int dano;
 
-	GameObject playerObjeto;
-	Player player;
+
 	InimigoMovimentaçao inimigo;
 
 	float temporizador;
@@ -15,9 +14,6 @@ public class InimigoAtaque : MonoBehaviour {
 	void Awake (){
 		//Definindo que apenas o player e utilizado, nao e necessario mas e o correto.
 		temporizador = 0;
-		playerObjeto = GameObject.FindGameObjectWithTag ("Player");
-		player = playerObjeto.GetComponent<Player> ();
-
 		inimigo = GetComponent<InimigoMovimentaçao>();
 
 	}
@@ -37,6 +33,7 @@ public class InimigoAtaque : MonoBehaviour {
 	}
 
 	public void BaterPlayer(){	
-		player.PlayerPerderVida (dano);
+		Player play = GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ();
+		play.PlayerPerderVida (dano);
 	}
 }

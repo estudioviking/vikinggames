@@ -30,6 +30,7 @@ public class Flecha : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D coll){
 
 		if (coll.gameObject.tag == "Player") {
+
 			perdervida.PlayerPerderVida(dano);
 			Destroy(this.gameObject);
 		}
