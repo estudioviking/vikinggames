@@ -5,7 +5,7 @@ public class InimigoMovimentaçao : MonoBehaviour {
 
 
 	public float speed;
-	public float limitx;
+	public float limitx, limity;
 
 
 
@@ -13,16 +13,17 @@ public class InimigoMovimentaçao : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		limitx = 3.5f;
+		limity = -7.5f;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
 		 
-		this.transform.Translate(Vector3.left*speed*Time.deltaTime);
+		this.transform.Translate(Vector2.down*speed*Time.deltaTime);
 	
 
-		if (this.transform.position.x <= limitx) {
+		if (this.transform.position.y <= limity) {
 			speed = 0f;
 
 		}

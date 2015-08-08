@@ -4,7 +4,7 @@ using System.Collections;
 public class ManagerInimigos : MonoBehaviour {
 	//posiçao de onde os inimigos iram sair
 
-	private float posicaoInicialY;
+	private float posicaoInicialX;
 	//listar inimigos
 	public GameObject guerreiro;
 	public GameObject arqueiro;
@@ -56,15 +56,15 @@ public class ManagerInimigos : MonoBehaviour {
 	}
 	void Guerreiro(){
 
-		posicaoInicialY = Random.Range (-5.5f,5.5f);
-		Instantiate (guerreiro,new Vector3(this.transform.position.x,posicaoInicialY,this.transform.position.z),Quaternion.identity);
+		posicaoInicialX = Random.Range (-0.5f,21.5f);
+		Instantiate (guerreiro,new Vector3(posicaoInicialX,this.transform.position.y,this.transform.position.z),Quaternion.identity);
 
 	
 	}
 	void Arqueiro(){
 		
-		posicaoInicialY = Random.Range (-5.5f,5.5f);
-		Instantiate (arqueiro,new Vector3(this.transform.position.x,posicaoInicialY,this.transform.position.z),Quaternion.identity);
+		posicaoInicialX = Random.Range (-0.5f,21.5f);
+		Instantiate (arqueiro,new Vector3(posicaoInicialX,this.transform.position.y,this.transform.position.z),Quaternion.identity);
 
 		
 	}
