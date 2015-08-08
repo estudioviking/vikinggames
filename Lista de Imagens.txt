@@ -1,0 +1,28 @@
+Caracteres
+Humanos
+Aldeões 
+Correndo 
+Salvo
+Morrendo
+Inimigos(Vários diferenciados)
+Correndo 
+Morrendo
+	
+Dorps
+Vida
+Especial
+Pontos
+
+BackGround
+Fase1
+Menu
+Derrota
+
+Barras
+Barra de vida
+Barra de Energia
+Botões
+Definir layout Botoes 
+Partículas 
+Golpe 
+Slide Espada
