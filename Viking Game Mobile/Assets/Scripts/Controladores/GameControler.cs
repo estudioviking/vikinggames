@@ -3,14 +3,13 @@ using System.Collections;
 
 public class GameControler : MonoBehaviour {
 
-	//public TextMesh moedas;
 
 	private int moeda, moedasColetadas, valorMoeda, valorPower;
 	private int level;
 	// Use this for initialization
 	void Start () {
 		moedasColetadas = PlayerPrefs.GetInt ("player_moedas", 0);
-	//	moedas.text = "" + moedasColetadas;
+	
 	}
 	
 	// Update is called once per frame
@@ -37,16 +36,18 @@ public class GameControler : MonoBehaviour {
 	void PlayerPegarMoedas(int pegar){
 		moeda += pegar;
 	
-		if (moeda > moedasColetadas)
-		{
+		//if (moeda > moedasColetadas)
+		//{
+			
 			moedasColetadas = moeda;
-		//	moedas.text = "" + moedasColetadas;
+			ScoreManager.score += moeda;
+
 			PlayerPrefs.SetInt("player_moedas", moedasColetadas);
 			PlayerPrefs.Save();
 		
-
+		moeda = 0;
 		
-		}
+		//}
 
 	}
 }

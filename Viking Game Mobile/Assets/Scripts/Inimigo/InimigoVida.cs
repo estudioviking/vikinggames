@@ -6,11 +6,13 @@ public class InimigoVida : MonoBehaviour {
 	public int vidaInimigo;
 	public GameObject moeda;
 	public GameObject power;
+
+	public int pontosInimigo;
 	int drop;
 
 	// Use this for initialization
 	void Start () {
-	
+		pontosInimigo = 10;
 	}
 	
 	// Update is called once per frame
@@ -23,6 +25,7 @@ public class InimigoVida : MonoBehaviour {
 			if(drop>=70)
 				Instantiate(power, this.transform.position,Quaternion.identity);
 
+			LevelControler.pontos += pontosInimigo;
 
 			Destroy(this.gameObject);
 		}

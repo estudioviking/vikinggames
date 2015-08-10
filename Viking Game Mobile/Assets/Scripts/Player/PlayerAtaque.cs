@@ -8,13 +8,10 @@ public class PlayerAtaque : MonoBehaviour {
 	private int dano_arma;
 	private int dano_total;
 
-	bool arco;
-	bool machado;
-	InimigoVida matarInimigo;
+ 	InimigoVida matarInimigo;
 	// Use this for initialization
 	void Start () {
-		arco = true;
-		machado = true;
+	
 		dano_total = 5;
 	
 	}
@@ -33,7 +30,7 @@ public class PlayerAtaque : MonoBehaviour {
 				{
 
 					matarInimigo.InimigoReceberDano(dano_total);
-					machado=true;
+
 				}
 			
 			}

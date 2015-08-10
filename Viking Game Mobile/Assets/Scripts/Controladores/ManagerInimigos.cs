@@ -7,7 +7,7 @@ public class ManagerInimigos : MonoBehaviour {
 	private float posicaoInicialX;
 	//listar inimigos
 	public GameObject guerreiro;
-	public GameObject arqueiro;
+
 
 	private float tempoLevel;
 	private float tempoLevelVariavel;
@@ -44,7 +44,7 @@ public class ManagerInimigos : MonoBehaviour {
 
 		if(invocar <= 30)
 			if (Time.time >= tempoLevel + tempoLevelVariavel) {
-				Invoke ("Arqueiro", 1f);
+				Invoke ("Guerreiro", 1f);
 				tempoLevel = Time.time;
 				tempoLevelVariavel -= 0.5f;
 				
@@ -56,18 +56,12 @@ public class ManagerInimigos : MonoBehaviour {
 	}
 	void Guerreiro(){
 
-		posicaoInicialX = Random.Range (-0.5f,21.5f);
+		posicaoInicialX = Random.Range (2f,21.5f);
 		Instantiate (guerreiro,new Vector3(posicaoInicialX,this.transform.position.y,this.transform.position.z),Quaternion.identity);
 
 	
 	}
-	void Arqueiro(){
-		
-		posicaoInicialX = Random.Range (-0.5f,21.5f);
-		Instantiate (arqueiro,new Vector3(posicaoInicialX,this.transform.position.y,this.transform.position.z),Quaternion.identity);
 
-		
-	}
 
 
 
