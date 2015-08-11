@@ -6,28 +6,29 @@ public class InimigoMovimentaçao : MonoBehaviour {
 
 	public float speed;
 	public float limitx, limity;
-
+	public int controleVelocidade;
 
 
 
 	// Use this for initialization
+
 	void Start () {
-		limitx = 3.5f;
-		limity = -7.5f;
+		
+		controleVelocidade = 10;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
-		 
+		
+		if(LevelControler.lvl > controleVelocidade){
+			speed +=1;
+			controleVelocidade +=10;
+		} 
 		this.transform.Translate(Vector2.down*speed*Time.deltaTime);
-	
-
-		if (this.transform.position.y <= limity) {
-			speed = 0f;
-
-		}
-			
+		
+		
+		
+		
 	}
 
 

@@ -34,5 +34,6 @@ public class InimigoVida : MonoBehaviour {
 	public void InimigoReceberDano (int perder){
 		vidaInimigo -= perder;
 	}
+	
 
 }

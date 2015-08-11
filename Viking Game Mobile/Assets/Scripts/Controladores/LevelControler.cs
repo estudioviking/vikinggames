@@ -4,7 +4,7 @@ using System.Collections;
 
 public class LevelControler : MonoBehaviour {
 	public static int pontos;
-	int lvl,uparlvl;
+	public static int lvl,uparlvl;
 	Text text;
 	
 	
